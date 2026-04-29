@@ -1,0 +1,225 @@
+:root {
+    --bg: #ffffff;
+    --primary: #0f172a;
+    --accent: #c5a059;
+    --gold-light: #e6c27d;
+    --text: #1e293b;
+    --text-dim: #64748b;
+    --muted: #f8fafc;
+    --border: #e2e8f0;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+}
+
+/* Header */
+nav {
+    padding: 2rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    background: white;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+/* Hero - Image Left, Text Right */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    background: var(--muted);
+    gap: 5%;
+}
+
+.hero-img-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.hero-img-wrapper {
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 30px 30px 0 var(--accent);
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.hero-content {
+    flex: 1.2;
+    animation: fadeInRight 1s ease-out;
+}
+
+.hero-content p.label {
+    color: var(--accent);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+/* Sections */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 5%;
+}
+
+.section {
+    margin-bottom: 100px;
+}
+
+.section-label {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 6px;
+    background: url("data:image/svg+xml,%3Csvg width='200' height='20' viewBox='0 0 200 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 15.5C30 10.5 170 5.5 198 12.5' stroke='%23c5a059' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    transition: width 1s ease-out;
+}
+
+.section-title.reveal::after {
+    width: 100%;
+}
+
+/* Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.card i {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.success-card {
+    background: var(--muted);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cta-btn {
+    padding: 1.2rem 3rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.cta-btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+    .hero { flex-direction: column; height: auto; padding: 150px 10% 80px; text-align: center; }
+    .hero-img-wrapper { width: 300px; height: 350px; margin-bottom: 50px; }
+    .hero h1 { font-size: 3rem; }
+}
