@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Kumar Agrawal | Advocate Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">V.K</a>
+        <div style="display: flex; gap: 2rem;">
+            <a href="tel:9993091900" style="color: var(--primary); text-decoration: none; font-weight: 600;">+91 99930-91900</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-img-container">
+            <div class="hero-img-wrapper">
+                <img src="N:/vivek.png" class="hero-img" alt="Vivek Kumar Agrawal">
+            </div>
+        </div>
+        <div class="hero-content">
+            <p class="label">Advocate | High Court of Chhattisgarh</p>
+            <h1>Vivek Kumar Agrawal</h1>
+            <p style="color: var(--text-dim); font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px;">
+                Providing clear, honest, and dedicated legal representation at the Chhattisgarh High Court. Based in Bilaspur, committed to justice.
+            </p>
+            <a href="mailto:vivek.agrawal7752@gmail.com" class="cta-btn">Book a Consultation</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section class="section reveal-item">
+            <span class="section-label">A Legacy of Justice</span>
+            <h2 class="section-title">Defending Your Rights with Clarity.</h2>
+            <p style="max-width: 800px; color: var(--text-dim); font-size: 1.1rem; margin-top: 1rem;">
+                Based in Bilaspur, I specialize in navigating the complexities of the <strong>Chhattisgarh High Court</strong>. My practice is built on a simple promise: Honest advice and absolute transparency for every client.
+            </p>
+        </section>
+
+        <section class="section reveal-item">
+            <span class="section-label">Expertise</span>
+            <h2 class="section-title">Strategic Legal Solutions</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>High Court Litigation</h3>
+                    <p>Expert handling of appeals and writs at the highest state level.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Family & Matrimonial</h3>
+                    <p>Gentle yet firm legal support for your family's most sensitive issues.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-city"></i>
+                    <h3>Property & Land Law</h3>
+                    <p>Protecting your heritage and investments from legal disputes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal-item">
+            <span class="section-label">Milestones</span>
+            <h2 class="section-title">Notable Case Successes</h2>
+            <div class="grid">
+                <div class="success-card">
+                    <h4 style="margin-bottom: 0.5rem;">Historic Land Restitution</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Won a multi-year property battle for a client, securing ownership of ancestral land at the High Court.</p>
+                    <small style="color: var(--accent); display: block; margin-top: 10px;">Dummy Victory #1</small>
+                </div>
+                <div class="success-card">
+                    <h4 style="margin-bottom: 0.5rem;">Complex Civil Writ</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Successfully challenged a government notification affecting local business rights.</p>
+                    <small style="color: var(--accent); display: block; margin-top: 10px;">Dummy Victory #2</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal-item" id="contact">
+            <span class="section-label">Get In Touch</span>
+            <h2 class="section-title">Office & Contact</h2>
+            <div class="grid">
+                <div class="card" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Location</h3>
+                    <p>C/o Singhal Complex, Infront of "Surya Bhawan", Near Gandhi Chowk, Bilaspur (C.G.)</p>
+                </div>
+                <div class="card" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Direct Contact</h3>
+                    <p>+91 99930-91900<br>+91 84628-99426<br>vivek.agrawal7752@gmail.com</p>
+                </div>
+            </div>
+        </section>
+
+        <footer style="margin-top: 100px; text-align: center; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 40px;">
+            &copy; 2026 Vivek Kumar Agrawal | Advocate Portfolio.
+        </footer>
+    </div>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    const title = entry.target.querySelector('.section-title');
+                    if (title) title.classList.add('reveal');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+
+</body>
+</html>
